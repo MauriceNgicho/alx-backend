@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Mock logging in"""
 from flask import Flask, render_template, request, g
-from flask_babel import Babel, _, get_locale
+from flask_babel import Babel, _, get_locale, format_datetime
 import pytz
 from pytz.exceptions import UnknownTimeZoneError
 from datetime import datetime
@@ -101,7 +101,7 @@ def index():
     current_time = format_datetime(datetime.now())
     return (render_template(
             'index.html', locale=get_locale(),
-            current_time=current_tim
+            current_time=current_time
             ))
 
 
